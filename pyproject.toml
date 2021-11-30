@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "KBGetter"
+version = "0.1.0"
+description = "Download FreshService articles to a local machine"
+authors = ["Matt Kasfeldt <matt.kasfeldt@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.26.0"
+tinydb = "^4.5.2"
+beautifulsoup4 ="^4.10.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

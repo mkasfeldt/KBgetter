@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; FSGetter 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FSGetter Examples" href="examples.html" />
+    <link rel="prev" title="Welcome to FSGetter’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FSGetter
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">FSGetter Examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="KBgetter.html">KBgetter</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FSGetter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">FSGetter</span></code> is used to download, store, and transform solutions from FreshService using the FreshService 2.0 API.</p>
+<p>FreshService organizes solutions into folders. Folders are organized into categories. When downloading articles the entire folder’s articles are pulled from FreshService and stored as a single record in the local database. This record is then pulled from the database and each individual article extracted and saved to  local HTML file in the article folder</p>
+<p>Articles in the local article folder retain all information, including the links image sources to the specified FreshService instance. The articles in the the Articles folder can then be converted to use local links and image sources, and download the images for the local image sources.</p>
+<p>The documentation for FreshService Servic Desk API 2.0 can be found <a class="reference external" href="https://api.freshservice.com/#introduction">Link here</a></p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<p>There is no current package on <a class="reference external" href="https://pypi.org/">Link pypi.org</a>. To use FSGetter copy KBgetter.py to the folder where you will build the local version of the knowledgebase then create a python file to execute your script.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FSGetter</span></code> depends on requests, TinyDB, and BeautifulSoup. Perform the following from the command line to install them before using <code class="docutils literal notranslate"><span class="pre">FSGetter</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">TinyDB</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span>
+</pre></div>
+</div>
+</section>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline"></a></h2>
+<p>An API key for the instance of FreshService is required to use FSGetter. The API key will be used to initialize the FSGetter class and passed as <em>username</em>. Please refer to <a class="reference external" href="https://api.freshservice.com/#authentication">Link FreshService Autentication</a> on how to obtain an API key.</p>
+<p>To download, store, and transform articles from KBGetter:</p>
+<ol class="arabic simple">
+<li><p>Import FSGetter from KBgetter.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">KBgetter</span> <span class="kn">import</span> <span class="n">FSGetter</span>
+</pre></div>
+</div>
+<ol class="arabic" start="2">
+<li><p>Create an instance of FSGetter.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>userame = Your API key</p></li>
+<li><p>password = “X”</p></li>
+<li><p>kb_url = The url to your instance of FreshService (ex: <code class="docutils literal notranslate"><span class="pre">https://convergint.freshservice.com</span></code>)</p></li>
+<li><p>kb_path = The local path to store the database, folders and files</p></li>
+<li><p>kb_name = The name of the new folder that will created on the kb_path to house the database, folders and files</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kb</span> <span class="o">=</span> <span class="n">KBGetter</span><span class="p">(</span><span class="s1">&#39;my_api_key&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;https://convergint.freshservice.com&#39;</span><span class="p">,</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Call the builder function to get the categories, folders and articles set from FreshService.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">build_kb</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Call the make_articles function to create all the articles in the local database.</p></li>
+</ol>
+<p>..code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make_articles</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">make_articles</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Call make_local_articles to create the local version of the articles created in the previous step.</p></li>
+</ol>
+<p>..code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make_local</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">make_local_articles</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to FSGetter’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="FSGetter Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Matt Kasfeldt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
