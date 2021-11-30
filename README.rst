@@ -1,3 +1,11 @@
+README.rst
+===========
+
+Documentation home: https://kbgetter.readthedocs.io/en/latest/
+
+Examples
+---------
+
 1. Create database, articles and local articles.
 
 .. code-block::

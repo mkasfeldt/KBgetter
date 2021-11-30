@@ -6,7 +6,8 @@ authors = ["Matt Kasfeldt <matt.kasfeldt@gmail.com>"]
 license = "MIT"
 
 homepage = "https://github.com/mkasfeldt/KBgetter"
-documentation = "
+documentation = "https://kbgetter.readthedocs.io/en/latest/"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 requests = "^2.26.0"
