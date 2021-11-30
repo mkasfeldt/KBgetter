@@ -71,7 +71,44 @@
              
   <section id="fsgetter-examples">
 <h1>FSGetter Examples<a class="headerlink" href="#fsgetter-examples" title="Permalink to this headline"></a></h1>
-<p>No examples currently.</p>
+<ol class="arabic simple">
+<li><p>Create database, articles and local articles.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">KBgetter</span> <span class="kn">import</span> <span class="n">FSGetter</span>
+
+<span class="c1">#Please get your API key by following the instructions at https://api.freshservice.com/#authentication</span>
+<span class="c1">#username must be the API key. username/password is no longer supported</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s1">&#39;your_api_key&#39;</span>
+<span class="c1">#password will always be &#39;X&#39; for API key usernames</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;X&#39;</span>
+<span class="c1">#kb_url is the base instance of FreshService for an organization</span>
+<span class="n">kb_url</span> <span class="o">=</span> <span class="s1">&#39;https://mycompany.freshservice.com&#39;</span>
+<span class="c1">#kb_name, in this example, is the directory where this script and KBgetter.py is stored and is a relative path</span>
+<span class="n">kb_name</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span>
+<span class="c1">#current_categories is passed to make_articles to limit the articles created by category</span>
+<span class="c1">#the categories&#39; IDs (integers) listed here are the categories that have D365 and associated systems documentation</span>
+<span class="n">current_categories</span> <span class="o">=</span> <span class="p">[</span><span class="mi">523212</span><span class="p">,</span> <span class="mi">523213</span><span class="p">,</span> <span class="mi">523214</span><span class="p">]</span>
+
+<span class="n">kb</span> <span class="o">=</span> <span class="n">FSGetter</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span><span class="n">password</span><span class="p">,</span><span class="n">kb_url</span><span class="p">,</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
+<span class="n">builder</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">build_kb</span><span class="p">()</span>
+<span class="c1">#passing current_categories to make_articles limits the articles created by category.</span>
+<span class="c1">#if nothing is passed to make_articles all articles in solutions will be created.</span>
+<span class="n">make_articles</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">make_articles</span><span class="p">(</span><span class="n">current_categories</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> articles created&#39;</span><span class="o">%</span><span class="n">make_articles</span><span class="p">)</span>
+<span class="n">make_local</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">make_local_articles</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> local articles created&#39;</span><span class="o">%</span><span class="n">make_local</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>View all categories from the database.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tinydb</span> <span class="kn">import</span> <span class="n">TinyDB</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="s1">&#39;db.json&#39;</span><span class="p">)</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;categories&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+        <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID = </span><span class="si">%s</span><span class="s2">, Name = </span><span class="si">%s</span><span class="s2">, Description = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">category</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span><span class="n">category</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">category</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
 </section>
 
 
