@@ -5,6 +5,8 @@ description = "Download FreshService articles to a local machine"
 authors = ["Matt Kasfeldt <matt.kasfeldt@gmail.com>"]
 license = "MIT"
 
+homepage = "https://github.com/mkasfeldt/KBgetter"
+documentation = "
 [tool.poetry.dependencies]
 python = "^3.7"
 requests = "^2.26.0"
