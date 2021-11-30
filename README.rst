@@ -1,5 +1,6 @@
 README.rst
 ===========
+FSGetter is used to pull FreshService knowledgebase articles to a local machine.
 
 Documentation home: https://kbgetter.readthedocs.io/en/latest/
 
