@@ -9,7 +9,7 @@ import time
 from bs4 import BeautifulSoup
 
 class FSGetter(object):
-    """The base class used to get information from the specified instance of FreshService Solutions area.
+    """Creates the local file structure and database, uses the FreshService 2.0 API to retrieve data and store it in the database and individual files, creates local versoins of the articles and downloads the associated images.
 
 :param username: User name for login to FreshService API(2.0).
 :type username: str, required.

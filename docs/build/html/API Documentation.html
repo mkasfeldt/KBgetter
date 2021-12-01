@@ -17,8 +17,7 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="KBgetter" href="KBgetter.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,12 +39,8 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">FSGetter Examples</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="KBgetter.html">KBgetter</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#class-fsgetter">Class <code class="docutils literal notranslate"><span class="pre">FSGetter</span></code></a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="KBgetter.html">API Documentation</a></li>
 </ul>
 
         </div>
@@ -74,18 +69,162 @@
              
   <section id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">KBGetter</span></code> module is used to download articles from FreshService Solutions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">KBGetter</span></code> module is used to perform all actions related to downloading, storing and creating articles on the local machine.</p>
 <section id="class-fsgetter">
 <h2>Class <code class="docutils literal notranslate"><span class="pre">FSGetter</span></code><a class="headerlink" href="#class-fsgetter" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kbgetter.KBgetter.</span></span><span class="sig-name descname"><span class="pre">FSGetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'KB'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>The base class used to get information from the specified instance of FreshService Solutions area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> (<em>str</em><em>, </em><em>required.</em>) – User name for login to FreshService API(2.0).</p></li>
+<li><p><strong>password</strong> (<em>str</em><em>, </em><em>required.</em>) – Password for login to Freshservice API(2.0). <em>When using an API key the password will be “X”</em>.</p></li>
+<li><p><strong>kb_url</strong> (<em>str</em><em>, </em><em>required.</em>) – The URL for the instance of the FreshService API.</p></li>
+<li><p><strong>kb_path</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>default = ''</em><em>)</em><em></em>) – The path to the local folder where the knowledgebase will be created. If not set this varialbe will need to be set and make_directories called to create the directory structure for the local knowledgebase.</p></li>
+<li><p><strong>kb_name</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>default = 'KB'</em><em>)</em><em></em>) – The name of the folder to be created where the local knowledgebase will be created.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">make_directories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Creates the local file struture for the knowledgebase. Sets the local paths for where the files will be stored.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">build_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create the database and build and populate the categories, folders, and folder_articles tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of the dicts for categories and folders, and the count of folder_articles.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Creates the categories table, retrieves the categories from FreshService, and populates the categories table in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>db</strong> (<em>TinyDB instance</em><em>, </em><em>required.</em>) – The TinyDB database created for the knowledgebase.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Categories contained in the insntance of FreshService Solutions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Creates the folders table, retrieves the folders from FreshService, and populates the folders table in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>categories</strong> (<em>dict</em><em>, </em><em>required.</em>) – The categories from the specified instance of FreshService Solutions.</p></li>
+<li><p><strong>db</strong> (<em>TinyDB instance</em><em>, </em><em>required.</em>) – The TinyDB database created for the knowledgebase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Folders contained in the insntance of FreshService Solutions.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_folder_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Creates the folder_articles table, retrieves the articles from each folder from FreshService, and populates the folder_articles table in the database. The articles retrieved from FreshService folders are contained in a single json file, converted into a dict, then stored in the local database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>folders</strong> (<em>dict</em><em>, </em><em>required.</em>) – The folders from the specified instance of FreshService Solutions.</p></li>
+<li><p><strong>db</strong> (<em>TinyDB instance</em><em>, </em><em>required.</em>) – The TinyDB database created for the knowledgebase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The count of folder articles inserted into the folder_articles table.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">article_to_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">article</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Create html for articles retrieved from the database, remove invalid characters, and clean them using BeautifulSoup</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>article</strong> (<em>str</em><em>, </em><em>required</em>) – The article from the folder_articles table.</p></li>
+<li><p><strong>folders</strong> (<em>list</em><em>, </em><em>required</em>) – The folder where the article is stored in FreshService.</p></li>
+<li><p><strong>categories</strong> (<em>list</em><em>, </em><em>required</em>) – The category where the folder for the article is stored in FreshService.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>html for the article</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">make_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Get individual articles from the database based on the provided categories, pass them to article_to_html, and write the html code to the local articles folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>current_categories</strong> (<em>list</em><em>, </em><em>optional</em><em> (</em><em>if blank retrieve articles from all categories</em><em>)</em><em></em>) – The list of category IDs from which the local html articles will be created. The articles created will retain all information from FreshService including href and img src locations. If no list is passed the function will retrieve articles from all categories. If a list of categories is provided only articles from the categories provided will be created.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The total number of articles created.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">make_local_articles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Create articles for the local knowledgebase from the articles folder and download the article images. This replaces all the FreshService hrefs and img srcs with a relative path to the local files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The total number of articles created.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="KBgetter.html" class="btn btn-neutral float-left" title="KBgetter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+          <footer>
 
   <hr/>
 

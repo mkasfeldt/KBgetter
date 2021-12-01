@@ -43,5 +43,3 @@ API Reference
    :maxdepth: 4
    
    KBgetter
-   API Documentation
-   
