@@ -6,7 +6,7 @@ FreshService organizes solutions into folders. Folders are organized into catego
 
 Articles in the local article folder retain all information, including the links image sources to the specified FreshService instance. The articles in the the Articles folder can then be converted to use local links and image sources, and download the images for the local image sources.
 
-The documentation for FreshService Servic Desk API 2.0 can be found ` here <https://api.freshservice.com/#introduction>`_
+The documentation for FreshService Servic Desk API 2.0 can be found `here <https://api.freshservice.com/#introduction>`_.
 
 Installation
 -------------
