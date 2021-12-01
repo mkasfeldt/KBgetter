@@ -10,7 +10,7 @@ documentation = "https://kbgetter.readthedocs.io/en/latest/"
 
 readme = "README.rst"
 
-classifieres = [
+classifiers = [
 	"Development Status :: 3 - Alpha",
 	"Intended Audience :: Developers",
 	"Intended Audience :: Other Audience",
