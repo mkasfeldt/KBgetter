@@ -8,9 +8,6 @@ import re
 import time
 from bs4 import BeautifulSoup
 
-"""Module giggles
-"""
-
 class FSGetter(object):
     """The base class used to get information from the specified instance of FreshService Solutions area.
 
