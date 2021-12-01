@@ -10,13 +10,7 @@ The documentation for FreshService Servic Desk API 2.0 can be found `Link here <
 
 Installation
 -------------
-There is no current package on `Link pypi.org <https://pypi.org/>`_. To use FSGetter copy KBgetter.py to the folder where you will build the local version of the knowledgebase then create a python file to execute your script.
-
-``FSGetter`` depends on requests, TinyDB, and BeautifulSoup. Perform the following from the command line to install them before using ``FSGetter``:
-
->>> pip install requests
->>> pip install TinyDB
->>> pip install beautifulsoup4
+pip install kbgetter
 
 Basic Usage
 ------------
@@ -28,7 +22,7 @@ To download, store, and transform articles from KBGetter:
 
 .. code-block::
 
-	from KBgetter import FSGetter
+	from kbgetter import FSGetter
 	
 2. Create an instance of FSGetter.
 

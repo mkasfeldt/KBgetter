@@ -4,7 +4,7 @@ FSGetter Examples
 
 .. code-block::
 
-	from KBgetter import FSGetter
+	from kbgetter import FSGetter
 
 	#Please get your API key by following the instructions at https://api.freshservice.com/#authentication
 	#username must be the API key. username/password is no longer supported
