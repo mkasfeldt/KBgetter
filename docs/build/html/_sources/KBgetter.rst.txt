@@ -1,8 +1,15 @@
-KBgetter
+API Documentation
 ====================
 The ``KBGetter`` module is used to download articles from FreshService Solutions.
 
-.. automodule:: KBgetter
-   :members: FSGetter
-   :undoc-members:
-   :show-inheritance:
+Class ``FSGetter``
+-------------------
+
+.. autoclass:: KBgetter.FSGetter
+	:members:
+	:private-members:
+	:member-order: bysource
+
+
+
+
