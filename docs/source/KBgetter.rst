@@ -6,3 +6,4 @@ The ``KBGetter`` module is used to download articles from FreshService Solutions
    :members:
    :undoc-members:
    :show-inheritance:
+   :noindex:

@@ -7,5 +7,5 @@ Class ``FSGetter``
 
 .. autoclass:: KBgetter.FSGetter
 	:members:
-	:private-members:
+	:inherited-members:
 	:member-order: bysource
