@@ -8,6 +8,7 @@ Welcome to FSGetter's documentation!
 FSGetter is used to pull FreshService knowledgebase articles to a local machine.
 
 Install using pip:
+
 .. code-block::
 
 	pip install kbgetter

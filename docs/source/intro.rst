@@ -10,7 +10,10 @@ The documentation for FreshService Servic Desk API 2.0 can be found `Link here <
 
 Installation
 -------------
-pip install kbgetter
+
+.. code-block::
+
+	pip install kbgetter
 
 Basic Usage
 ------------
