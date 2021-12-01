@@ -27,20 +27,23 @@ pip Installation
 >>> make_local = kb.make_local_articles()
 >>> print('%s local articles created'%make_local)
 
--------------------------------------
-Introduction
+
+User Guide
 -------------------------------------
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    
    intro
    examples
-
--------------------------------------
-API Reference
--------------------------------------
-.. toctree::
-   :maxdepth: 4
-   
    API
    links
+
+Useful Links
+-------------
+* `kbgetter on PyPi <https://pypi.org/project/kbgetter/>`_.
+* `kbgetter on GitHub <https://github.com/mkasfeldt/KBgetter>`_.
+* `FreshService API Reference <https://api.freshservice.com/>`_.
+* `Find your FreshService API key <https://api.freshservice.com/#authentication>`_.
+
+
+

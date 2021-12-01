@@ -39,9 +39,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">FSGetter Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FSGetter Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-database-articles-and-local-articles">Create database, articles and local articles.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-all-categories-from-the-database">View all categories from the database.</a></li>
 </ul>
-<ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="API.html">API Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="links.html">Project Links</a></li>
 </ul>
@@ -72,9 +74,8 @@
              
   <section id="fsgetter-examples">
 <h1>FSGetter Examples<a class="headerlink" href="#fsgetter-examples" title="Permalink to this headline"></a></h1>
-<ol class="arabic simple">
-<li><p>Create database, articles and local articles.</p></li>
-</ol>
+<section id="create-database-articles-and-local-articles">
+<h2>Create database, articles and local articles.<a class="headerlink" href="#create-database-articles-and-local-articles" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">kbgetter</span> <span class="kn">import</span> <span class="n">FSGetter</span>
 
 <span class="c1">#Please get your API key by following the instructions at https://api.freshservice.com/#authentication</span>
@@ -100,9 +101,9 @@
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> local articles created&#39;</span><span class="o">%</span><span class="n">make_local</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>View all categories from the database.</p></li>
-</ol>
+</section>
+<section id="view-all-categories-from-the-database">
+<h2>View all categories from the database.<a class="headerlink" href="#view-all-categories-from-the-database" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tinydb</span> <span class="kn">import</span> <span class="n">TinyDB</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">TinyDB</span><span class="p">(</span><span class="s1">&#39;db.json&#39;</span><span class="p">)</span>
 <span class="n">categories</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;categories&#39;</span><span class="p">)</span>
@@ -110,6 +111,7 @@
         <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;ID = </span><span class="si">%s</span><span class="s2">, Name = </span><span class="si">%s</span><span class="s2">, Description = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">category</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span><span class="n">category</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">category</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]))</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 

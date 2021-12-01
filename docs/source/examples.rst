@@ -1,6 +1,8 @@
 FSGetter Examples
 ====================================
-1. Create database, articles and local articles.
+
+Create database, articles and local articles.
+----------------------------------------------
 
 .. code-block::
 
@@ -28,7 +30,8 @@ FSGetter Examples
 	make_local = kb.make_local_articles()
 	print('%s local articles created'%make_local)
 
-2. View all categories from the database.
+View all categories from the database.
+---------------------------------------
 
 .. code-block::
 

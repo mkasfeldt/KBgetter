@@ -4,12 +4,12 @@ Project Links
 GitHub
 ------
 
-`https://github.com/mkasfeldt/KBgetter`
+https://github.com/mkasfeldt/KBgetter/
 
 PyPi
 -----
 
-<https://pypi.org/project/kbgetter/>
+https://pypi.org/project/kbgetter/
 
 FreshService API 
 -----------------
