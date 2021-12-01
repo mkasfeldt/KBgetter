@@ -1,2 +1,2 @@
-from kbgetter.KBgetter import FSGetter
+from .KBgetter import FSGetter
 __all__ = ('FSGetter',)

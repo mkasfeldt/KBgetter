@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "KBGetter"
-version = "0.1.5"
+version = "0.1.6"
 description = "Download FreshService articles to a local machine"
 authors = ["Matt Kasfeldt <matt.kasfeldt@gmail.com>"]
 license = "MIT"
