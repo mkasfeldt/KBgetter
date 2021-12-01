@@ -6,7 +6,7 @@ FreshService organizes solutions into folders. Folders are organized into catego
 
 Articles in the local article folder retain all information, including the links image sources to the specified FreshService instance. The articles in the the Articles folder can then be converted to use local links and image sources, and download the images for the local image sources.
 
-The documentation for FreshService Servic Desk API 2.0 can be found `Link here <https://api.freshservice.com/#introduction>`_
+The documentation for FreshService Servic Desk API 2.0 can be found ` here <https://api.freshservice.com/#introduction>`_
 
 Installation
 -------------
@@ -17,7 +17,7 @@ Installation
 
 Basic Usage
 ------------
-An API key for the instance of FreshService is required to use FSGetter. The API key will be used to initialize the FSGetter class and passed as *username*. Please refer to `Link FreshService Autentication <https://api.freshservice.com/#authentication>`_ on how to obtain an API key.
+An API key for the instance of FreshService is required to use FSGetter. The API key will be used to initialize the FSGetter class and passed as *username*. Please refer to `FreshService Autentication <https://api.freshservice.com/#authentication>`_ on how to obtain an API key.
 
 To download, store, and transform articles from KBGetter:
 
