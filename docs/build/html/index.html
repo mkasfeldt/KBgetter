@@ -71,7 +71,11 @@
   <section id="welcome-to-fsgetter-s-documentation">
 <h1>Welcome to FSGetter’s documentation!<a class="headerlink" href="#welcome-to-fsgetter-s-documentation" title="Permalink to this headline"></a></h1>
 <p>FSGetter is used to pull FreshService knowledgebase articles to a local machine.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">form</span> <span class="n">KBgetter</span> <span class="kn">import</span> <span class="nn">FSGetter</span>
+<p>Install using pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">kbgetter</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">KBgetter</span> <span class="kn">import</span> <span class="n">FSGetter</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">kb</span> <span class="o">=</span> <span class="n">KBGetter</span><span class="p">(</span><span class="s1">&#39;my_api_key&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;https://mycompany.freshservice.com&#39;</span><span class="p">,</span><span class="s1">&#39;./&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">builder</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">build_kb</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">make_articles</span> <span class="o">=</span> <span class="n">kb</span><span class="o">.</span><span class="n">make_articles</span><span class="p">(</span><span class="n">current_categories</span><span class="p">)</span>
