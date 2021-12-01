@@ -73,9 +73,9 @@
   <section id="kbgetter">
 <h1>KBgetter<a class="headerlink" href="#kbgetter" title="Permalink to this headline"></a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">KBGetter</span></code> module is used to download articles from FreshService Solutions.</p>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">KBgetter.</span></span><span class="sig-name descname"><span class="pre">FSGetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'KB'</span></span></em><span class="sig-paren">)</span></dt>
+<span class="target" id="module-kbgetter.KBgetter"></span><dl class="py class">
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kbgetter.KBgetter.</span></span><span class="sig-name descname"><span class="pre">FSGetter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kb_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'KB'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The base class used to get information from the specified instance of FreshService Solutions area.</p>
 <dl class="field-list simple">
@@ -90,8 +90,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">article_to_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">article</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.article_to_html">
+<span class="sig-name descname"><span class="pre">article_to_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">article</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.article_to_html" title="Permalink to this definition"></a></dt>
 <dd><p>Create html for articles retrieved from the database, remove invalid characters, and clean them using BeautifulSoup</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -111,8 +111,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">build_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.build_kb">
+<span class="sig-name descname"><span class="pre">build_kb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.build_kb" title="Permalink to this definition"></a></dt>
 <dd><p>Create the database and build and populate the categories, folders, and folder_articles tables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -125,8 +125,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.get_categories">
+<span class="sig-name descname"><span class="pre">get_categories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.get_categories" title="Permalink to this definition"></a></dt>
 <dd><p>Creates the categories table, retrieves the categories from FreshService, and populates the categories table in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -142,8 +142,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_folder_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.get_folder_articles">
+<span class="sig-name descname"><span class="pre">get_folder_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.get_folder_articles" title="Permalink to this definition"></a></dt>
 <dd><p>Creates the folder_articles table, retrieves the articles from each folder from FreshService, and populates the folder_articles table in the database. The articles retrieved from FreshService folders are contained in a single json file, converted into a dict, then stored in the local database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -162,8 +162,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.get_folders">
+<span class="sig-name descname"><span class="pre">get_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">categories</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.get_folders" title="Permalink to this definition"></a></dt>
 <dd><p>Creates the folders table, retrieves the folders from FreshService, and populates the folders table in the database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -182,8 +182,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">make_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.make_articles">
+<span class="sig-name descname"><span class="pre">make_articles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.make_articles" title="Permalink to this definition"></a></dt>
 <dd><p>Get individual articles from the database based on the provided categories, pass them to article_to_html, and write the html code to the local articles folder.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -199,14 +199,14 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">make_directories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.make_directories">
+<span class="sig-name descname"><span class="pre">make_directories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.make_directories" title="Permalink to this definition"></a></dt>
 <dd><p>Creates the local file struture for the knowledgebase. Sets the local paths for where the files will be stored.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">make_local_articles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py" id="kbgetter.KBgetter.FSGetter.make_local_articles">
+<span class="sig-name descname"><span class="pre">make_local_articles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kbgetter.KBgetter.FSGetter.make_local_articles" title="Permalink to this definition"></a></dt>
 <dd><p>Create articles for the local knowledgebase from the articles folder and download the article images. This replaces all the FreshService hrefs and img srcs with a relative path to the local files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
