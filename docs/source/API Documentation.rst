@@ -5,7 +5,7 @@ The ``KBGetter`` module is used to download articles from FreshService Solutions
 Class ``FSGetter``
 -------------------
 
-.. autoclass:: KBgetter.FSGetter
+.. autoclass:: kbgetter.KBgetter.FSGetter
 	:members:
 	:inherited-members:
 	:member-order: bysource
