@@ -5,7 +5,7 @@
 
 Welcome to FSGetter's documentation!
 ====================================
-FSGetter is a python package used to pull FreshService knowledgebase articles to a local machine.
+FSGetter is a python package used to pull FreshService knowledge base articles to a local machine.
 
 Installation Requirements
 --------------------------
