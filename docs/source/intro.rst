@@ -2,7 +2,7 @@ Introduction
 ====================================
 ``FSGetter`` is used to download, store, and transform solutions from FreshService using the FreshService 2.0 API. 
 
-FreshService organizes solutions into folders. Folders are organized into categories. When downloading articles the entire folder's articles are pulled from FreshService and stored as a single record in the local database. This record is then pulled from the database and each individual article extracted and saved to  local HTML file in the article folder
+FreshService organizes solutions into folders. Folders are organized into categories. When downloading articles the entire folder's articles are pulled from FreshService and stored as a single record in the local database. This record is then pulled from the database and each individual article extracted and saved to  local HTML file in the article folder.
 
 Articles in the local article folder retain all information, including the links image sources to the specified FreshService instance. The articles in the the Articles folder can then be converted to use local links and image sources, and download the images for the local image sources.
 
